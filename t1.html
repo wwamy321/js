@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0px;padding:0px;}
+        body{background:url(2.png);background-size:100%;}
+        #wrap{
+            position:absolute;
+            width: 200px;
+            height: 200px;
+            border-radius:50%;
+            box-shadow: 0px 0px 10px 3000px #000,
+                        0px 0px 10px 10px rgba(255, 255, 255, 0.705) inset;
+            transition: transform .5s;
+            }
+        #wrap:active{
+            transform:scale(2);  
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    <script>
+        var oWrap = document.getElementById('wrap'); //获取遮罩层
+        document.onmousemove = function(e){ 
+            var x1 = e.clientX; //获取鼠标当前X轴的位置
+            var y1 = e.clientY;//获取鼠标Y轴位置
+            console.log(x1,y1);
+           oWrap.style.left = (x1-100)+'px';
+           oWrap.style.top  = (y1-100)+'px';
+           
+        }
+    </script>
+</body>
+</html>
